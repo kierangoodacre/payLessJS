@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="payLessShop">
+ <head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <link rel="stylesheet" href="stylesheet.css" type="text/css">
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="../bower_components/angular-resource/angular-resource.js"></script>
+  <script src="controllers.js"></script>
+ </head>
+ <body ng-controller="payLessCtrl">
+
+   <ul>
+     <li ng-repeat="item in items">
+       <span>{{item.name}}</span>
+       <span>{{item.description}}</span>
+     </li>
+   </ul>
+ </body>
+
+
+ </body>
+</html>

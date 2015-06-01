@@ -1,3 +1,0 @@
-payLessShop.controller('payLessController', [function() {
-
-}]);

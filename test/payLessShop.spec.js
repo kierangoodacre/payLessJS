@@ -1,15 +1,13 @@
-describe('payLessController', function(){
+describe('payLessCtrl', function(){
 
   beforeEach(module('payLessShop'));
 
-  var ctrl;
+  it('will be created with items list of 12', inject(function($controller) {
+    var scope = {},
+        ctrl = $controller('payLessCtrl', {$scope:scope});
 
-  beforeEach(inject(function($controller){
-    ctrl = $controller('payLessController');
+
+    expect(scope.items.length).toBe(13);
   }));
-
-  it('initialises with an empty basket', function(){
-    expect(ctrl.basket).toBeUndefined();
-  });
 
 });
