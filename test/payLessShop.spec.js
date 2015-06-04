@@ -6,7 +6,6 @@ describe('payLessCtrl', function(){
     var scope = {},
         ctrl = $controller('payLessCtrl', {$scope:scope});
 
-
     expect(scope.items.length).toBe(13);
   }));
 

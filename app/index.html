@@ -12,10 +12,19 @@
  </head>
  <body ng-controller="payLessCtrl">
 
+   <div class="container-fluid">
+     <div class="row">
+       <div class="cold-md-2">
+         Search: <input ng-model="query">
+       </div>
+       <div class="col-md-10">
+     </div>
+   </div>
    <ul>
      <li ng-repeat="item in items">
-       <span>{{item.name}}</span>
-       <span>{{item.description}}</span>
+       <span>{{item.name}},</span>
+       <span> {{item.description}}</span>
+       <span>£{{item.price}}</span>
      </li>
    </ul>
  </body>
