@@ -134,4 +134,25 @@ payLessShop.controller('payLessCtrl', function($scope){
     }
   ]
 
+  $scope.basket = [];
+
+  $scope.addItem = function(item){
+    if(item.name === $scope.itemNameSearch(item).name) {
+      $scope.basket.push(item.price);
+    }
+  };
+
+  $scope.itemNameSearch = function(item) {
+    for (var name in $scope.items) {
+      if($scope.items.hasOwnProperty(name)) {
+        var itemName = $scope.items[name];
+        for (var prop in itemName) {
+          if(itemName.hasOwnProperty(prop)) {
+            return itemName;
+          }
+        }
+      }
+    }
+  };
+
 });
