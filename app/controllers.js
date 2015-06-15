@@ -138,7 +138,7 @@ payLessShop.controller('payLessCtrl', function($scope){
 
   $scope.addItem = function(item){
     if(item.name === $scope.itemNameSearch(item).name) {
-      $scope.basket.push(item.price);
+      $scope.basket.push(item);
     }
   };
 
@@ -151,6 +151,15 @@ payLessShop.controller('payLessCtrl', function($scope){
             return itemName;
           }
         }
+      }
+    }
+  };
+
+  $scope.removeItem = function(item) {
+    if(item.name === $scope.itemNameSearch(item).name) {
+      for(var i = 0; i < $scope.basket.length; i++) {
+        $scope.basket.splice(i, 1);
+        break;
       }
     }
   };
