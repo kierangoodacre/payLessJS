@@ -136,6 +136,8 @@ payLessShop.controller('payLessCtrl', function($scope){
 
   $scope.basket = [];
 
+  $scope.priceTotal = [];
+
   $scope.addItem = function(item){
     if(item.name === $scope.itemNameSearch(item).name) {
       $scope.basket.push(item);
@@ -148,6 +150,7 @@ payLessShop.controller('payLessCtrl', function($scope){
         var itemName = $scope.items[name];
         for (var prop in itemName) {
           if(itemName.hasOwnProperty(prop)) {
+            $scope.priceTotal.push(item.price);
             return itemName;
           }
         }
@@ -162,6 +165,15 @@ payLessShop.controller('payLessCtrl', function($scope){
         break;
       }
     }
+  };
+
+  $scope.calculateBasketTotal = function(item){
+    return $scope.priceTotal.reduce(add, 0);
+
+    function add(a, b){
+      return a + b
+    };
+
   };
 
 });

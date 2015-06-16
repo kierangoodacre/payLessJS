@@ -40,10 +40,11 @@ describe('payLessCtrl', function(){
 
     it('Calculates total', inject(function($controller){
       var scope = {};
-          ctrl = $controller('PayLessCtrl', {$scope:scope});
+          ctrl = $controller('payLessCtrl', {$scope:scope});
 
-      scope.addItem({name: 'Almond Toe Court Shoes', quantity: '1'});
-      expect(scope.calculateBasketTotal()).toEqual(50);
+      scope.addItem({name: 'Almond Toe Court Shoes', quantity: '1', price: 50, amountRequested: 0, category: 'Casualwear'});
+      scope.addItem({name: 'Almond Toe Court Shoes', quantity: '1', price: 50, amountRequested: 0, category: 'Casualwear'});
+      expect(scope.calculateBasketTotal()).toEqual(100);
     }));
 
   });
